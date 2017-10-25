@@ -25,7 +25,7 @@ pod 'AutomaticKeyboard'
 
 ## The Basics
 
-First create the outlet containing the keyboardView and the property containing your keybboard object
+First create the outlet containing the keyboardView and the property containing your keyboard object
 
 ```swift
 @IBOutlet var keyboardView: UIView?
@@ -57,7 +57,8 @@ override open func viewDidDisappear(_ animated: Bool) {
 }
 ```
 
-After all this steps you need to setup your **.xib** file to accept **AutomaticKeyboard**, for that just add a **scrollView** to your view and **link** it to the **keyboardView** outlet.
+After all this steps you need to setup your **.xib** file to accept **AutomaticKeyboard**, for that just add a **scrollView** to your view and **link** it to the **keyboardView** outlet.<br><br>
+Check `AutomaticKeyboardSample-iOS` for a complete example.
 
 ## Contributing
 

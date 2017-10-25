@@ -22,12 +22,52 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h5f-w2-miy">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h5f-w2-miy">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RXq-rg-Xxn">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="271"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click on textfield" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3pL-Qh-S0q">
+                                    <rect key="frame" x="123" y="200" width="128" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vxw-Bx-btI">
+                                    <rect key="frame" x="20" y="231" width="335" height="30"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="vxw-Bx-btI" secondAttribute="bottom" constant="10" id="50f-id-TJs"/>
+                                <constraint firstItem="3pL-Qh-S0q" firstAttribute="centerX" secondItem="RXq-rg-Xxn" secondAttribute="centerX" id="Uwf-Pb-j2c"/>
+                                <constraint firstItem="vxw-Bx-btI" firstAttribute="top" secondItem="3pL-Qh-S0q" secondAttribute="bottom" constant="10" id="WWs-D0-4Nb"/>
+                                <constraint firstItem="vxw-Bx-btI" firstAttribute="leading" secondItem="RXq-rg-Xxn" secondAttribute="leading" constant="20" id="ddU-C2-Pmv"/>
+                                <constraint firstAttribute="trailing" secondItem="vxw-Bx-btI" secondAttribute="trailing" constant="20" id="dlG-iF-cCo"/>
+                                <constraint firstItem="3pL-Qh-S0q" firstAttribute="top" secondItem="RXq-rg-Xxn" secondAttribute="top" constant="200" id="rrg-e6-AKS"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="RXq-rg-Xxn" firstAttribute="width" secondItem="h5f-w2-miy" secondAttribute="width" id="33H-vR-vfX"/>
+                        <constraint firstAttribute="bottom" secondItem="RXq-rg-Xxn" secondAttribute="bottom" id="EQr-5c-npd"/>
+                        <constraint firstItem="RXq-rg-Xxn" firstAttribute="leading" secondItem="h5f-w2-miy" secondAttribute="leading" id="FlH-O4-pEh"/>
+                        <constraint firstAttribute="trailing" secondItem="RXq-rg-Xxn" secondAttribute="trailing" id="ixN-UP-LeP"/>
+                        <constraint firstItem="RXq-rg-Xxn" firstAttribute="top" secondItem="h5f-w2-miy" secondAttribute="top" id="uNo-h5-Mc7"/>
+                    </constraints>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="h5f-w2-miy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="47O-Jn-KRg"/>
+                <constraint firstAttribute="trailing" secondItem="h5f-w2-miy" secondAttribute="trailing" id="Hf8-sx-ZAe"/>
+                <constraint firstItem="h5f-w2-miy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RqV-tj-CLo"/>
+                <constraint firstAttribute="bottom" secondItem="h5f-w2-miy" secondAttribute="bottom" id="gVk-Kd-21b"/>
+            </constraints>
         </view>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
     </objects>

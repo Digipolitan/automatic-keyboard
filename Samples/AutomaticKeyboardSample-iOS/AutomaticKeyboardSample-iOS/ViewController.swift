@@ -11,8 +11,8 @@ import AutomaticKeyboard
 
 class ViewController: UIViewController {
 
-    @IBOutlet var keyboardView: UIView?
-
+    @IBOutlet weak var keyboardView: UIView?
+    @IBOutlet weak var textField: UITextField!
     public var keyboardOptions = Keyboard.Options(mode: .insets)
 
     public var keyboard: Keyboard?
