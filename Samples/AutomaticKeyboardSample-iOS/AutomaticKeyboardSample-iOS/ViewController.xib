@@ -15,6 +15,7 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="keyboardView" destination="h5f-w2-miy" id="2cE-M9-23Z"/>
+                <outlet property="textField" destination="vxw-Bx-btI" id="2vK-xA-zjq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
