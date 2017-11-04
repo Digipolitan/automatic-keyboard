@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		65CE8CED5A4C7BC188EC0F53 /* Pods_Frameworks_AutomaticKeyboard_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C9D0F3BE860F6B5005FF8E /* Pods_Frameworks_AutomaticKeyboard_iOS.framework */; };
 		A3169DBA1DE05E8300BABAFD /* AutomaticKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3169DB01DE05E8300BABAFD /* AutomaticKeyboard.framework */; };
-		A370DE8A1FAE54EC000FEDED /* AutomaticKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = A370DE881FAE54EC000FEDED /* AutomaticKeyboard.h */; };
+		A370DE8A1FAE54EC000FEDED /* AutomaticKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = A370DE881FAE54EC000FEDED /* AutomaticKeyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A370DE8B1FAE54EC000FEDED /* AutomaticKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A370DE891FAE54EC000FEDED /* AutomaticKeyboard.swift */; };
 		A38EF2CA1DECF97000637484 /* AutomaticKeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38EF2C71DECF97000637484 /* AutomaticKeyboardTests.swift */; };
 		F94DA4EB697B242F200A3866 /* Pods_Tests_AutomaticKeyboardTests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA412C178943E9ADFF991F1 /* Pods_Tests_AutomaticKeyboardTests_iOS.framework */; };
