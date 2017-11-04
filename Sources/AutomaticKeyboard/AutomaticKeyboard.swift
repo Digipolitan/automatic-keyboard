@@ -1,5 +1,5 @@
 //
-//  Keyboard.swift
+//  AutomaticKeyboard.swift
 //  AutomaticKeyboard
 //
 //  Created by david LINHARES on 24/10/2017.
@@ -9,10 +9,14 @@
 import Foundation
 import UIKit
 
-public class Keyboard {
+public class AutomaticKeyboard {
 
     public let view: UIView
     public let options: Options
+
+    public var isVisible: Bool {
+        return self.keyboardHeight != 0
+    }
 
     private var keyboardHeight: CGFloat = 0
     private var autoCloseGestureRecognizer: UITapGestureRecognizer?
@@ -26,22 +30,26 @@ public class Keyboard {
     public struct Options {
         public let mode: ViewMode
         public let offset: CGFloat
-        public let relative: Bool
+        public let isRelative: Bool
+        public let shouldAutoCloseOnTouchView: Bool
 
-        public init(mode: ViewMode = .resize, offset: CGFloat = 0, relative: Bool = true) {
+        public init(mode: ViewMode = .resize, offset: CGFloat = 0, isRelative: Bool = true, shouldAutoCloseOnTouchView: Bool = true) {
             self.mode = mode
             self.offset = offset
-            self.relative = relative
+            self.isRelative = isRelative
+            self.shouldAutoCloseOnTouchView = shouldAutoCloseOnTouchView
         }
     }
 
     public init(view: UIView, options: Options = Options()) {
         self.view = view
         self.options = options
-        let autoCloseGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(autoCloseKeyboard))
-        autoCloseGestureRecognizer.isEnabled = false
-        view.addGestureRecognizer(autoCloseGestureRecognizer)
-        self.autoCloseGestureRecognizer = autoCloseGestureRecognizer
+        if options.shouldAutoCloseOnTouchView {
+            let autoCloseGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(close))
+            autoCloseGestureRecognizer.isEnabled = false
+            view.addGestureRecognizer(autoCloseGestureRecognizer)
+            self.autoCloseGestureRecognizer = autoCloseGestureRecognizer
+        }
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: Notification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
     }
@@ -50,7 +58,7 @@ public class Keyboard {
         NotificationCenter.default.removeObserver(self)
     }
 
-    @objc private func autoCloseKeyboard() {
+    @objc public func close() {
         self.view.endEditing(true)
     }
 
@@ -66,7 +74,7 @@ public class Keyboard {
             delta -= self.options.offset
         }
 
-        delta += self.options.relative ? keyboardHeight - self.keyboardHeight : 0
+        delta += self.options.isRelative ? keyboardHeight - self.keyboardHeight : 0
 
         UIView.beginAnimations("keyboard_transform", context: nil)
         UIView.setAnimationDuration(duration)
