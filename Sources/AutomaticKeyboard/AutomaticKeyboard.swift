@@ -2,7 +2,7 @@
 //  AutomaticKeyboard.swift
 //  AutomaticKeyboard
 //
-//  Created by david LINHARES on 24/10/2017.
+//  Created by David LINHARES on 24/10/2017.
 //  Copyright © 2017 Digipolitan. All rights reserved.
 //
 
@@ -50,8 +50,8 @@ public class AutomaticKeyboard {
             view.addGestureRecognizer(autoCloseGestureRecognizer)
             self.autoCloseGestureRecognizer = autoCloseGestureRecognizer
         }
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: Notification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
     deinit {
@@ -62,7 +62,7 @@ public class AutomaticKeyboard {
         self.view.endEditing(true)
     }
 
-    private func transform(duration: TimeInterval, keyboardHeight: CGFloat, animation: UIViewAnimationCurve) {
+    private func transform(duration: TimeInterval, keyboardHeight: CGFloat, animation: UIView.AnimationCurve) {
         guard self.keyboardHeight != keyboardHeight else {
             return
         }
@@ -103,7 +103,7 @@ public class AutomaticKeyboard {
 
     @objc private func keyboardWillShow(_ notification: Notification) {
         guard let userInfo = notification.userInfo,
-            let keyboardRect = userInfo[UIKeyboardFrameEndUserInfoKey] as? CGRect,
+            let keyboardRect = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect,
             let window = self.view.window else {
             return
         }
@@ -112,13 +112,13 @@ public class AutomaticKeyboard {
 
         let endKeyboardFrame = window.convert(keyboardRect, to: self.view)
 
-        var animation: UIViewAnimationCurve = .linear
-        if let curveInfo = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? Int,
-            let curve = UIViewAnimationCurve(rawValue: curveInfo) {
+        var animation: UIView.AnimationCurve = .linear
+        if let curveInfo = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? Int,
+            let curve = UIView.AnimationCurve(rawValue: curveInfo) {
             animation = curve
         }
 
-        self.transform(duration: userInfo[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval ?? 0.3, keyboardHeight: endKeyboardFrame.height, animation: animation)
+        self.transform(duration: userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval ?? 0.3, keyboardHeight: endKeyboardFrame.height, animation: animation)
     }
 
     @objc private func keyboardWillHide(_ notification: Notification) {
@@ -128,13 +128,13 @@ public class AutomaticKeyboard {
 
         self.autoCloseGestureRecognizer?.isEnabled = false
 
-        var animation: UIViewAnimationCurve = .linear
-        if let curveInfo = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? Int,
-            let curve = UIViewAnimationCurve(rawValue: curveInfo) {
+        var animation: UIView.AnimationCurve = .linear
+        if let curveInfo = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? Int,
+            let curve = UIView.AnimationCurve(rawValue: curveInfo) {
             animation = curve
         }
 
-        self.transform(duration: userInfo[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval ?? 0.3, keyboardHeight: 0, animation: animation)
+        self.transform(duration: userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval ?? 0.3, keyboardHeight: 0, animation: animation)
     }
 
 }
