@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name = "AutomaticKeyboard"
-s.version = "1.0.1"
+s.version = "1.0.2"
 s.summary = "Helper to manage views when the keyboard is visible"
 s.homepage = "https://github.com/Digipolitan/automatic-keyboard"
 s.authors = "Digipolitan"
