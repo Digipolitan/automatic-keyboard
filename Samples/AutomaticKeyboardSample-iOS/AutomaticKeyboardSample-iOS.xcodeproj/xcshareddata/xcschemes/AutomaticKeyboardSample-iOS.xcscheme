@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A3169DAF1DE05E8300BABAFD"
-               BuildableName = "AutomaticKeyboard.framework"
-               BlueprintName = "AutomaticKeyboard-iOS"
-               ReferencedContainer = "container:AutomaticKeyboard.xcodeproj">
+               BlueprintIdentifier = "A30D63ED1E0D717E00A3CE45"
+               BuildableName = "AutomaticKeyboardSample-iOS.app"
+               BlueprintName = "AutomaticKeyboardSample-iOS"
+               ReferencedContainer = "container:AutomaticKeyboardSample-iOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -26,27 +26,16 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      codeCoverageEnabled = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A3169DB81DE05E8300BABAFD"
-               BuildableName = "AutomaticKeyboardTests-iOS.xctest"
-               BlueprintName = "AutomaticKeyboardTests-iOS"
-               ReferencedContainer = "container:AutomaticKeyboard.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A3169DAF1DE05E8300BABAFD"
-            BuildableName = "AutomaticKeyboard.framework"
-            BlueprintName = "AutomaticKeyboard-iOS"
-            ReferencedContainer = "container:AutomaticKeyboard.xcodeproj">
+            BlueprintIdentifier = "A30D63ED1E0D717E00A3CE45"
+            BuildableName = "AutomaticKeyboardSample-iOS.app"
+            BlueprintName = "AutomaticKeyboardSample-iOS"
+            ReferencedContainer = "container:AutomaticKeyboardSample-iOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -62,15 +51,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A3169DAF1DE05E8300BABAFD"
-            BuildableName = "AutomaticKeyboard.framework"
-            BlueprintName = "AutomaticKeyboard-iOS"
-            ReferencedContainer = "container:AutomaticKeyboard.xcodeproj">
+            BlueprintIdentifier = "A30D63ED1E0D717E00A3CE45"
+            BuildableName = "AutomaticKeyboardSample-iOS.app"
+            BlueprintName = "AutomaticKeyboardSample-iOS"
+            ReferencedContainer = "container:AutomaticKeyboardSample-iOS.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -80,15 +70,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A3169DAF1DE05E8300BABAFD"
-            BuildableName = "AutomaticKeyboard.framework"
-            BlueprintName = "AutomaticKeyboard-iOS"
-            ReferencedContainer = "container:AutomaticKeyboard.xcodeproj">
+            BlueprintIdentifier = "A30D63ED1E0D717E00A3CE45"
+            BuildableName = "AutomaticKeyboardSample-iOS.app"
+            BlueprintName = "AutomaticKeyboardSample-iOS"
+            ReferencedContainer = "container:AutomaticKeyboardSample-iOS.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

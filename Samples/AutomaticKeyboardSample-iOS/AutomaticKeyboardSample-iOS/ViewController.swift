@@ -33,8 +33,8 @@ class ViewController: UIViewController {
 
     private func resetKeyboard(options: AutomaticKeyboard.Options) {
         self.keyboard?.close()
-        if let kv = self.keyboardView {
-            self.keyboard = AutomaticKeyboard(view: kv, options: options)
+        if let kbv = self.keyboardView {
+            self.keyboard = AutomaticKeyboard(view: kbv, options: options)
         } else {
             self.keyboard = nil
         }
